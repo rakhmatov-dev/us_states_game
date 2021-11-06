@@ -1,9 +1,9 @@
 import turtle
 import pandas
 
-IMAGE_FILE = "/Volumes/Extreme SSD/Python Bootcamp/Day 25/Mac/US states game/blank_states_img.gif"
-STATES_FILE = "/Volumes/Extreme SSD/Python Bootcamp/Day 25/Mac/US states game/50_states.csv"
-OUTPUT_FILE = "/Volumes/Extreme SSD/Python Bootcamp/Day 25/Mac/US states game/states_to_learn.csv"
+IMAGE_FILE = "blank_states_img.gif"
+STATES_FILE = "50_states.csv"
+OUTPUT_FILE = "states_to_learn.csv"
 
 screen = turtle.Screen()
 screen.title("U.S. States Game")
