@@ -1,9 +1,9 @@
 import turtle
 import pandas
 
-IMAGE_FILE = "blank_states_img.gif"
-STATES_FILE = "50_states.csv"
-OUTPUT_FILE = "states_to_learn.csv"
+IMAGE_FILE = "/Volumes/Extreme SSD/Python Bootcamp/Day 25/Mac/US states game/blank_states_img.gif"
+STATES_FILE = "/Volumes/Extreme SSD/Python Bootcamp/Day 25/Mac/US states game/50_states.csv"
+OUTPUT_FILE = "/Volumes/Extreme SSD/Python Bootcamp/Day 25/Mac/US states game/states_to_learn.csv"
 
 screen = turtle.Screen()
 screen.title("U.S. States Game")
@@ -45,11 +45,12 @@ while len(guessed_states) < 50:
     except Exception as err:
         break
 
-states_to_learn = []
-for state in df_states["state"].to_list():
-    if (state != "state"
-            and state not in guessed_states):
-        states_to_learn.append(state)
+# Conditional list comprehension
+states_to_learn = [state for state in df_states["state"].to_list() if (state != "state" and state not in guessed_states)]
+# for state in df_states["state"].to_list():
+#     if (state != "state"
+#             and state not in guessed_states):
+#         states_to_learn.append(state)
 
 df_output = pandas.DataFrame(states_to_learn)
 df_output.to_csv(OUTPUT_FILE)
